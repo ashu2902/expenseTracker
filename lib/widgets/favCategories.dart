@@ -32,14 +32,17 @@ class _FavCatState extends State<FavCat> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: const [
             CategoryIcon(
+              size: 110,
               color: Color(0xffEB6842),
               iconPath: "assets/food_icon.png",
             ),
             CategoryIcon(
+              size: 110,
               color: Color(0xff77ADD9),
               iconPath: "assets/entertainment_icon.png",
             ),
             CategoryIcon(
+              size: 110.0,
               color: Color(0xff8D62F7),
               iconPath: "assets/shopping_icon.png",
             ),
@@ -51,10 +54,15 @@ class _FavCatState extends State<FavCat> {
 }
 
 class CategoryIcon extends StatelessWidget {
-  const CategoryIcon({required this.color, required this.iconPath, Key? key})
+  const CategoryIcon(
+      {required this.color,
+      required this.iconPath,
+      required this.size,
+      Key? key})
       : super(key: key);
   final Color? color;
   final String iconPath;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +70,7 @@ class CategoryIcon extends StatelessWidget {
       child: SleekCircularSlider(
         appearance: CircularSliderAppearance(
           startAngle: 0,
-          size: 110,
+          size: size,
           angleRange: 360,
           customColors: CustomSliderColors(
             trackColor: Colors.grey,

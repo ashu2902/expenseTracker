@@ -27,15 +27,15 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeaderRow(),
-              TotalExpensesCard(),
-              FavCat(),
-              Padding(
-                padding: const EdgeInsets.only(left: 25.0),
+              const HeaderRow(),
+              const TotalExpensesCard(),
+              const FavCat(),
+              const Padding(
+                padding: EdgeInsets.only(left: 30.0),
                 child: Rewards(),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Image.asset(
                   "assets/refer.png",
                   width: wd,

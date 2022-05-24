@@ -17,12 +17,11 @@ class RewardCarousel extends StatelessWidget {
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 18.0,
-                    ),
+                        horizontal: 18.0, vertical: 12),
                     child: Image.asset("assets/Group 3304.png"),
                   ),
                   const Padding(
@@ -41,25 +40,28 @@ class RewardCarousel extends StatelessWidget {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Row(
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "Activate",
                             style: TextStyle(color: Colors.black),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_right_alt,
                             color: Colors.black,
                           ),
+                          SizedBox(
+                            width: wd / 4,
+                          ),
+                          Image.asset(
+                            "assets/Ellipse 112.png",
+                            height: 65,
+                            width: 65,
+                          )
                         ],
                       ),
-                      Image.asset(
-                        "assets/Ellipse 112.png",
-                        height: 65,
-                        width: 65,
-                      )
                     ],
                   )
                 ],
@@ -74,12 +76,11 @@ class RewardCarousel extends StatelessWidget {
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 18.0,
-                    ),
+                        horizontal: 18.0, vertical: 12),
                     child: Image.asset("assets/Group 3304.png"),
                   ),
                   const Padding(
@@ -98,25 +99,28 @@ class RewardCarousel extends StatelessWidget {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Row(
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "Activate",
                             style: TextStyle(color: Colors.black),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_right_alt,
                             color: Colors.black,
                           ),
+                          SizedBox(
+                            width: wd / 4,
+                          ),
+                          Image.asset(
+                            "assets/Ellipse 112.png",
+                            height: 65,
+                            width: 65,
+                          )
                         ],
                       ),
-                      Image.asset(
-                        "assets/Ellipse 112.png",
-                        height: 65,
-                        width: 65,
-                      )
                     ],
                   )
                 ],

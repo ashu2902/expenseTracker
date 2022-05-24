@@ -1,13 +1,17 @@
-import 'package:expense_tracker/home.dart';
-import 'package:expense_tracker/planning.dart';
+import 'package:expense_tracker/Screens/home.dart';
+import 'package:expense_tracker/Screens/planning.dart';
 import 'package:expense_tracker/themes/themes.dart';
-import 'package:expense_tracker/widgets/favCategories.dart';
-import 'package:expense_tracker/widgets/header.dart';
-import 'package:expense_tracker/widgets/totalSpentCard.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() {
+  initGetStorage();
   runApp(const MyApp());
+}
+
+initGetStorage() async {
+  
+  await GetStorage.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -53,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               enableFeedback: true,
               type: BottomNavigationBarType.fixed,
-              elevation: 0,
+              elevation: 20,
               currentIndex: index,
               selectedItemColor: Colors.black12,
               unselectedItemColor: Colors.black12,
@@ -101,20 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: screens[index],
     );
-
-    // Scaffold(
-    //     appBar: AppBar(
-    //       title: Image.asset("assets/logo.png"),
-    //       actions: [
-    //         Image.asset('assets/notification_icon.png'),
-    //         Image.asset('assets/profile_icon.png')
-    //       ],
-    //     ),
-    //     body: SingleChildScrollView(
-    //       child: Column(
-    //         children: const [HeaderRow(), TotalExpensesCard(), FavCat()],
-    //       ),
-    //     ));
   }
 }
 

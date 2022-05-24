@@ -1,3 +1,4 @@
+import 'package:expense_tracker/Screens/addExpenseScreen.dart';
 import 'package:flutter/material.dart';
 
 class AddExpenseButton extends StatelessWidget {
@@ -12,7 +13,12 @@ class AddExpenseButton extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     side: BorderSide(color: Colors.white))),
             backgroundColor: MaterialStateProperty.all(Colors.black)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AddExpenseScreen()));
+        },
         child: Row(
           children: const [
             Icon(
