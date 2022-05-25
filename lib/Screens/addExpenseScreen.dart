@@ -53,22 +53,159 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
                   title: "Amount",
                   prefix: "₹",
                 ),
-                ExpenseField(
-                  textController: categoryController,
-                  title: "Category",
+                // ExpenseField(
+                //   textController: categoryController,
+                //   title: "Category",
+                // ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    height: 60,
+                    width: wd,
+                    decoration: const BoxDecoration(color: Color(0xff272729)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Category',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          DropdownButton<String>(
+                            underline: Container(),
+                            value: categoryController.text.isEmpty
+                                ? "Select"
+                                : categoryController.text,
+                            focusColor: Colors.white,
+                            items: [
+                              'Select',
+                              'Food',
+                              'Entertainment',
+                              'Shopping'
+                            ].map((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (value) {
+                              setState(() {
+                                categoryController.text = value!;
+                              });
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
+
                 ExpenseField(
                   textController: dateController,
                   title: "Date",
                 ),
-                ExpenseField(
-                  textController: merchantController,
-                  title: "Merchant",
+                // ExpenseField(
+                //   textController: merchantController,
+                //   title: "Merchant",
+                // ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    height: 60,
+                    width: wd,
+                    decoration: const BoxDecoration(color: Color(0xff272729)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            'Merchant',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        DropdownButton<String>(
+                          underline: Container(),
+                          value: merchantController.text.isEmpty
+                              ? "Select"
+                              : merchantController.text,
+                          style: TextStyle(color: Colors.white),
+                          items: <String>[
+                            'Select',
+                            'Swiggy',
+                            'Zomato',
+                            'BookMyShow',
+                            'Trivago'
+                          ].map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              merchantController.text = value!;
+                            });
+                          },
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-                ExpenseField(
-                  textController: paidViaController,
-                  title: "Paid via",
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    height: 60,
+                    width: wd,
+                    decoration: const BoxDecoration(color: Color(0xff272729)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Paid Via',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          DropdownButton<String>(
+                            underline: Container(),
+                            value: paidViaController.text.isEmpty
+                                ? "Select"
+                                : paidViaController.text,
+                            focusColor: Colors.white,
+                            items: [
+                              'Select',
+                              'Google Pay',
+                              'Paytm',
+                              'Cash',
+                              'Credit Card',
+                              'Debit Card',
+                              'Other',
+                            ].map((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            onChanged: (value) {
+                              setState(() {
+                                paidViaController.text = value!;
+                              });
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
+                // ExpenseField(
+                //   textController: paidViaController,
+                //   title: "Paid via",
+                // ),
               ],
             ),
             Expanded(

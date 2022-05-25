@@ -81,7 +81,9 @@ class _PlanningPageState extends State<PlanningPage> {
                       category: "Entertainment",
                       iconPath: "assets/entertainment_icon.png",
                       price: entertainmentList.last.amount.toString()),
-              RecentTransactions()
+              RecentTransactions(
+                recentTransactions: data!,
+              )
             ],
           ),
         ),

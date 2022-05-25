@@ -1,8 +1,10 @@
+import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
 
 class RecentTransactions extends StatefulWidget {
-  const RecentTransactions({Key? key}) : super(key: key);
-
+  const RecentTransactions({required this.recentTransactions, Key? key})
+      : super(key: key);
+  final List<Expense> recentTransactions;
   @override
   State<RecentTransactions> createState() => _RecentTransactionsState();
 }
@@ -33,15 +35,29 @@ class _RecentTransactionsState extends State<RecentTransactions> {
               ),
             ),
             ListView.builder(
-                itemCount: 1,
+                itemCount: widget.recentTransactions.length > 4
+                    ? 4
+                    : widget.recentTransactions.length,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    child: Row(
-                      children: [
-                        
-                      ],
-                    ),
+                    child: Column(children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Image.asset("assets/swiggyIcon.png"),
+                          Column(
+                            children: [
+                              Text(widget.recentTransactions[index].merchant),
+                              Text(widget.recentTransactions[index].date)
+                            ],
+                          ),
+                          Text(
+                              "₹${widget.recentTransactions[index].amount.toString()}")
+                        ],
+                      ),
+                      Divider()
+                    ]),
                   );
                 })
           ],
