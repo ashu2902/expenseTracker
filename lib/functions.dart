@@ -13,6 +13,7 @@ Future readFromStorage(key) async {
   try {
     final st = GetStorage();
     var data = await st.read(key);
+
     return data;
   } catch (e) {
     print(e);

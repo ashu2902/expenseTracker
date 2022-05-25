@@ -31,7 +31,7 @@ class Rewards extends StatelessWidget {
             style: TextStyle(color: Color(0xff777778)),
           ),
         ),
-        RewardCarousel()
+        const RewardCarousel()
       ],
     );
   }

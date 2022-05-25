@@ -11,7 +11,7 @@ class AddExpenseButton extends StatelessWidget {
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
-                    side: BorderSide(color: Colors.white))),
+                    side: const BorderSide(color: Colors.white))),
             backgroundColor: MaterialStateProperty.all(Colors.black)),
         onPressed: () {
           Navigator.push(
@@ -22,7 +22,7 @@ class AddExpenseButton extends StatelessWidget {
         child: Row(
           children: const [
             Icon(
-              Icons.add_circle_outline_rounded,
+              Icons.add,
               color: Color(0xffC1FC00),
             ),
             Text(

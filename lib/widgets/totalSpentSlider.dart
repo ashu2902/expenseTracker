@@ -11,7 +11,6 @@ class TotalSpentSlider extends StatefulWidget {
 
 class _TotalSpentSliderState extends State<TotalSpentSlider> {
   double value = 0.0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,9 +21,9 @@ class _TotalSpentSliderState extends State<TotalSpentSlider> {
               valueIndicatorColor: Colors.white,
               showValueIndicator: ShowValueIndicator.onlyForDiscrete,
               valueIndicatorTextStyle: const TextStyle(color: Colors.black),
-              valueIndicatorShape: PaddleSliderValueIndicatorShape(),
+              valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
               tickMarkShape: SliderTickMarkShape.noTickMark,
-              trackShape: GradientRectSliderTrackShape()),
+              trackShape: const GradientRectSliderTrackShape()),
           child: Slider.adaptive(
             label: value.toString(),
             divisions: 10,
@@ -42,7 +41,7 @@ class _TotalSpentSliderState extends State<TotalSpentSlider> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             value.toString(),
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
         )
       ],
